@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "ethers": "^6.15.0",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.441.0",
     "react": "^19.1.1",
@@ -21,8 +20,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:backend": "npm --prefix backend start",
+    "dev:backend": "npm --prefix backend run dev",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "npm run test:backend && react-scripts test --watchAll=false --passWithNoTests",
+    "test:backend": "npm --prefix backend test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,13 +46,11 @@
     ]
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
     "autoprefixer": "^10.4.21",
-    "hardhat": "^2.26.3",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "EcoFi Drunix frontend",
   "main": "tailwind.config.js",
   "keywords": [],
   "author": "",
